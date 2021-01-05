@@ -1,0 +1,20 @@
+{
+    "JsonKeyForString": "JsonStringValue",
+    "JsonKeyForInt": 123,
+
+    "CustomSection":
+    {
+        "CustomSectionKey" : "This is a custom section value."
+    },
+    "CustomSectionWithSubSections":
+    {
+        "SubSectionOne":
+        {
+            "SubSectionKey" : "SubSectionValueOne"
+        },
+        "SubSectionTwo":
+        {
+            "SubSectionKey" : "SubSectionValueTwo"
+        }
+    }
+}

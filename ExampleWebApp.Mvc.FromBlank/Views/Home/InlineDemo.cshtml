@@ -1,0 +1,52 @@
+<h1>Inline C# code demos</h1>
+<h2>if-else</h2>
+@{
+	bool run = true;
+}
+@if(run)
+{
+	<p>if:Branch code is running</p>
+}
+else
+{
+	<p>else:Branch code is running</p>
+}
+
+<h2>swith-case</h2>
+@{
+	int number = 3;
+}
+@switch (number)
+{
+	case 1:
+		<p>Case @number</p>
+		break;
+	case 2:
+		<p>Case @number</p>
+		break;
+	case 3:
+		<p>Case @number</p>
+		break;
+	default:
+		<p>Case @number</p>
+		break;
+}
+<h2>for</h2>
+@for(int i = 0; i < 5; i++)
+{
+	<span>@(i * i)</span>
+}
+<h2>foreach</h2>
+@foreach(char c in "some string")
+{
+	<span>@c</span>
+}
+
+<h2>function</h2>
+@{
+	double add(double x, double y)
+	{
+		return x + y;
+	}
+}
+<p>5.5 + 6.5 = @add(5.5, 6.5)</p>

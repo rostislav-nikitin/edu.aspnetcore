@@ -1,0 +1,39 @@
+@using ExampleWebApp.Mvc.FromBlank.Models
+@model IList<InfoModel>
+@{
+	ViewData["Title"] = "Home Page";
+}
+<h2>Hello world MVC!!! :: Index</h2>
+
+<div>Model Size: @Model.Count</div>
+@foreach(var subModel in Model)
+{
+	<div>@subModel.CustomProperty</div>
+}
+<div>@System.IO.Directory.GetCurrentDirectory()</div>
+<img src="~/images/video.jpeg" />
+
+<h2>Send by parameters</h2>
+<form method="post" action="~/Home/AcceptByParameters">
+	<label for="customProperty">CustomProperty:</label>
+	<input type="text" name="customProperty" />
+	<input type="submit" value="Send" />
+</form>
+
+<h2>Send by model</h2>
+<form method="post" action="~/Home/AcceptByModel">
+	<label for="CustomProperty">CustomProperty:</label>
+	<input type="text" name="CustomProperty" />
+	<input type="submit" value="Send" />
+</form>
+
+<h2>Send by models list</h2>
+<form method="post" action="~/Home/AcceptByModelsList">
+	@for(int idx = 0; idx < 5; idx++)
+	{
+		<label for="models[@idx].CustomProperty">CustomProperty:</label>
+		<input type="text" name="models[@idx].CustomProperty" /><br />
+	}
+	<input type="submit" value="Send" />
+</form>
+<partial name="PartialView">
